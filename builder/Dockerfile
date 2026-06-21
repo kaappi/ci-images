@@ -5,7 +5,7 @@ ARG TARGETARCH
 
 RUN apt-get update -qq && \
     apt-get install -y -qq --no-install-recommends \
-      curl xz-utils ca-certificates git make gcc pkg-config \
+      curl xz-utils ca-certificates git make gcc libc6-dev pkg-config \
       libssl-dev libpq-dev redis-tools postgresql-client && \
     rm -rf /var/lib/apt/lists/*
 
