@@ -12,6 +12,7 @@ RUN apt-get update -qq && \
 RUN case "${TARGETARCH}" in \
       amd64) ZIG_ARCH=x86_64 ;; \
       arm64) ZIG_ARCH=aarch64 ;; \
+      riscv64) ZIG_ARCH=riscv64 ;; \
       *) echo "Unsupported arch: ${TARGETARCH}" && exit 1 ;; \
     esac && \
     curl -sL "https://ziglang.org/download/${ZIG_VERSION}/zig-${ZIG_ARCH}-linux-${ZIG_VERSION}.tar.xz" \
